@@ -1,0 +1,167 @@
+.card {
+  display: flex;
+  border-radius: 16px;
+  background-color: $whitecolor;
+  overflow: hidden;
+  width: $widhtCard576;
+  @include md {
+    width: $widhtCard768;
+    flex-wrap: wrap;
+  }
+  @include xl {
+    width: $widhtCard1280;
+    flex-wrap: nowrap;
+  }
+}
+
+.img_wrapper {
+  @include flex-center;
+  min-width: $widhtImgWrap576;
+  height: $heightImgWrap576;
+  background-color: $color_card1;
+
+  @include md {
+    width: $widhtImgWrap768;
+    height: $heightImgWrap768;
+  }
+  @include xl {
+    min-width: $widhtImgWrap1280;
+    height: $heightImgWrap1280;
+  }
+
+  img {
+    @include img_size_card576;
+    @include md {
+      @include img_size_card768;
+    }
+    @include xl {
+      @include img_size_card1280;
+    }
+  }
+}
+
+.text_block {
+  display: flex;
+  flex-direction: column;
+  margin: $margtext_block576;
+  @include md {
+    margin: $margtext_block768;
+  }
+  @include xl {
+    margin: $margtext_block1280;
+    justify-content: flex-start;
+  }
+}
+.header_text {
+  @include flex-between;
+  color: $header_color;
+  span:nth-child(1) {
+    @include font(11, 600, 15);
+    @include xl {
+      @include font(20, 600, 27);
+    }
+  }
+  span:nth-child(2) {
+    @include font(11, 400, 15);
+    @include xl {
+      @include font(18, 600, 25);
+    }
+  }
+}
+.article_text {
+  color: $article_color;
+  h2 {
+    font-family: "DM Serif Display", serif;
+    margin: $margin_h2_576;
+    span:nth-child(2) {
+      display: none;
+    }
+    @include font(20, 400, 25);
+    @include md {
+      margin: $margin_h2_768;
+      span:nth-child(2) {
+        display: inline;
+      }
+      span:nth-child(1) {
+        display: none;
+      }
+    }
+    @include xl {
+      @include font(40, 400, 46);
+      margin: $margin_h2_1280;
+    }
+  }
+  p {
+    display: none;
+    @include font(13, 400, 19);
+    span {
+      display: none;
+      @include xl {
+        display: inline;
+      }
+    }
+    @include md {
+      display: block;
+      margin: 0;
+    }
+    @include xl {
+      @include font(18, 400, 27);
+    }
+  }
+}
+
+.footer_card {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  color: $footer_color;
+  @include font(11, 600, 15);
+  @include md {
+    display: flex;
+    margin: $margfooter768;
+  }
+  @include xl {
+    margin: $margfooter1280;
+    @include font(18, 600, 25);
+  }
+}
+.user {
+  @include flex-center;
+  gap: 12px;
+}
+.avatar_1,
+.avatar_2,
+.avatar_3 {
+  background-size: cover;
+  @include size_avatar(32, 32);
+  @include xl {
+    @include size_avatar(44, 44);
+  }
+}
+.btn_more {
+  @include flex-center;
+  img {
+    margin-top: 2px;
+    width: 15px;
+    height: 15px;
+    @include xl {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+.card:nth-child(2) {
+  .img_wrapper {
+    background: $color_card2;
+  }
+}
+.card:nth-child(3) {
+  .img_wrapper {
+    background: $color_card3;
+  }
+}
+@for $i from 1 through 3 {
+  .avatar_#{$i} {
+    background-image: url("../img/avatar/#{$i}.png");
+  }
+}

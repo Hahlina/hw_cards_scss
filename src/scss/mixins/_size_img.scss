@@ -1,0 +1,17 @@
+@mixin img_size_card576 {
+  width: 75px;
+  height: 75px;
+}
+@mixin img_size_card768 {
+  width: 120px;
+  height: 120px;
+}
+@mixin img_size_card1280 {
+  width: 240px;
+  height: 240px;
+}
+
+@mixin size_avatar($width, $height) {
+  width: $width * 1px;
+  height: $height * 1px;
+}

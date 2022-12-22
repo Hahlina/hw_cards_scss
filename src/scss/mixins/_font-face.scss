@@ -1,0 +1,7 @@
+/* stylelint-disable */
+
+@mixin font($font-size, $weight, $line-height) {
+  font-size: $font-size * 1px;
+  font-weight: $weight;
+  line-height: $line-height * 1px;
+}

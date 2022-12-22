@@ -1,0 +1,6 @@
+@mixin gap {
+  gap: 32px;
+  @include md {
+    gap: 64px;
+  }
+}
